@@ -84,7 +84,7 @@ input:focus, select:focus {
 
 .pdf-body {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 13pt;
+    font-size: 12pt;
     line-height: 1.5;
     color: #000000;
 }
@@ -108,4 +108,15 @@ input:focus, select:focus {
 .head-teacher-note h4 {
     text-align: center;
     margin-top: 0;
+}
+
+.seal-box {
+    width: 80px;
+    height: 80px;
+    border: 1px dashed #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 12px;
 }
