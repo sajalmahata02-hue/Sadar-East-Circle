@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h2 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #34495e;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.btn-submit {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #219653;
+}
+
+.pdf-container {
+    display: none;
+}
+
+.pdf-body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13pt;
+    line-height: 1.5;
+    color: #000000;
+}
+
+.sig-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sig-table td {
+    width: 50%;
+    vertical-align: top;
+}
+
+.head-teacher-note {
+    border: 1px solid #333;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.head-teacher-note h4 {
+    text-align: center;
+    margin-top: 0;
+}

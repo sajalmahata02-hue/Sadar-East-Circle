@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Leave Application Portal - Bankura DPSC</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>District Primary School Council, Bankura</h2>
+            <p>Leave Application & PDF Generator Portal</p>
+        </header>
+
+        <main>
+            <form id="leaveForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="teacherName">Applicant Full Name:</label>
+                        <input type="text" id="teacherName" required placeholder="e.g., Sri/Smt. John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="designation">Designation:</label>
+                        <select id="designation" required>
+                            <option value="">Select Designation</option>
+                            <option value="Assistant Teacher">Assistant Teacher</option>
+                            <option value="Head Teacher">Head Teacher</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="schoolName">Name of School:</label>
+                        <select id="schoolName" required>
+                            <option value="">Select School</option>
+                            <!-- PASTE YOUR 99 SCHOOL OPTIONS HERE -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="circleName">Circle Name:</label>
+                        <input type="text" id="circleName" required placeholder="e.g., Bankura Sadar / Barjora">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dateOfJoining">Date of First Joining:</label>
+                        <input type="date" id="dateOfJoining" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaveType">Leave Type:</label>
+                        <select id="leaveType" required>
+                            <option value="Commuted/Medical Leave">Commuted / Medical Leave</option>
+                            <option value="Casual Leave">Casual Leave</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startDate">From Date:</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">To Date:</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Generate Official PDF Application</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Official PDF Template -->
+    <div id="pdfTemplate" class="pdf-container">
+        <div class="pdf-body">
+            <p><strong>To</strong><br>
+            The Chairman,<br>
+            District Primary School Council, Bankura.<br>
+            <em>Through Proper Channel</em></p>
+
+            <p><strong>Subject: Prayer for sanction of <span id="lblLeaveTypeSub">Commuted/Medical Leave</span>.</strong></p>
+
+            <p>Sir/Madam,</p>
+
+            <p style="text-align: justify;">
+                I beg to state that I, <strong><span id="lblTeacherName"></span></strong>, <strong><span id="lblDesignation"></span></strong> of <strong><span id="lblSchoolName"></span></strong> Primary School, under <strong><span id="lblCircleName"></span></strong> Circle, Bankura (Date of First Joining: <strong><span id="lblDateOfJoining"></span></strong>), have been suffering from illness and, on medical grounds, was/is unable to attend school.
+            </p>
+
+            <p style="text-align: justify;">
+                I, therefore, pray for sanction of <span id="lblLeaveTypeBody">Commuted/Medical Leave</span> for the period from <strong><span id="lblStartDate"></span></strong> to <strong><span id="lblEndDate"></span></strong>, totaling <strong><span id="lblTotalDays"></span></strong> days, on medical grounds.
+            </p>
+
+            <p style="text-align: justify;">
+                The necessary medical certificate and other relevant documents are enclosed herewith for kind consideration and necessary approval.
+            </p>
+
+            <p>I shall be grateful if your good office is pleased to sanction the aforesaid leave.</p>
+
+            <br>
+            <table class="sig-table">
+                <tr>
+                    <td></td>
+                    <td>
+                        Yours faithfully,<br><br>
+                        Signature: __________________________<br>
+                        Name: <span id="lblTeacherNameSign"></span><br>
+                        Designation: <span id="lblDesignationSign"></span><br>
+                        Name of School: <span id="lblSchoolNameSign"></span><br>
+                        Circle: <span id="lblCircleSign"></span><br>
+                        Date of Joining: <span id="lblDateOfJoiningSign"></span><br>
+                        Date: <span id="lblCurrentDate"></span>
+                    </td>
+                </tr>
+            </table>
+
+            <p><strong>Encl.:</strong><br>
+            1. Medical Certificate.<br>
+            2. Leave application/prayer.<br>
+            3. Other relevant documents, if any.</p>
+
+            <hr style="border: dashed 1px #888; margin: 20px 0;">
+
+            <!-- NOTE OF THE HEAD TEACHER -->
+            <div class="head-teacher-note">
+                <h4>NOTE OF THE HEAD TEACHER</h4>
+                <p style="text-align: justify;">
+                    Certified that <strong><span id="lblTeacherNameNote"></span></strong>, <strong><span id="lblDesignationNote"></span></strong> of this school, remained/is remaining absent from school from <strong><span id="lblStartDateNote"></span></strong> to <strong><span id="lblEndDateNote"></span></strong> due to illness and has submitted a prayer for sanction of leave for <strong><span id="lblTotalDaysNote"></span></strong> days.
+                </p>
+                <p style="text-align: justify;">
+                    The leave application along with the necessary medical certificate/documents is hereby forwarded and recommended for consideration and sanction by the competent authority.
+                </p>
+                <br>
+                <table class="sig-table">
+                    <tr>
+                        <td>School Seal</td>
+                        <td>
+                            Signature of Head Teacher<br><br>
+                            Signature: __________________________<br>
+                            Name: _____________________________<br>
+                            Designation: Head Teacher<br>
+                            School: <span id="lblSchoolNameNoteSign"></span><br>
+                            Date: _____________________________
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
